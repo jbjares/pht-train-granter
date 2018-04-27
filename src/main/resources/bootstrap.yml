@@ -18,7 +18,7 @@ spring:
           #    config:
           #      discovery:
           #        enabled: true
-          #        service-id: config-server
+          #        service-trainDestinationID: config-server
           #      fail-fast: false
           #      retry:
           #        initial-interval: 2000
@@ -38,23 +38,18 @@ eureka:
 ---
 
 spring:
-  h2:
-    console:
-      enabled: true
-      settings:
-        web-allow-others: true
-  profiles: docker
+  profiles: denbi
   application:
     name: train-granter
   cloud:
     stream:
       kafka:
         binder:
-          brokers: kafka:9092              
+          brokers: 193.196.20.95:9092
           #    config:
           #      discovery:
           #        enabled: true
-          #        service-id: config-server
+          #        service-trainDestinationID: config-server
           #      fail-fast: false
           #      retry:
           #        initial-interval: 2000
@@ -76,4 +71,4 @@ eureka:
     registerWithEureka: true
     fetchRegistry: true
     serviceUrl:
-            defaultZone: http://eureka-server:8761/eureka/
+            defaultZone: http://193.196.20.86:8761/eureka/
