@@ -6,7 +6,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.stream.annotation.EnableBinding;
 import org.springframework.cloud.stream.annotation.StreamListener;
 import org.springframework.cloud.stream.messaging.Sink;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 
 
@@ -23,6 +22,6 @@ public class TrainGranterApplication {
 	void sink(TrainVisit trainVisit) {
 
         // Currently, just forward the TrainVisit to the respective APIStation
-        new RestTemplate().postForEntity(trainVisit.getStationURI(), trainVisit, ResponseEntity.class);
+        new RestTemplate().postForLocation(trainVisit.getStationURI(), trainVisit);
     }
 }
