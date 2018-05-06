@@ -1,5 +1,5 @@
 server:
-  port: 6011
+  port: 8765
 
 spring:
   h2:
@@ -61,7 +61,7 @@ spring:
           destination: trainvisit
 
 server:
-    port: 6011
+    port: 8765
 
 eureka:
   instance:
